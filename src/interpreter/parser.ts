@@ -1096,7 +1096,7 @@ class ASTBuilder {
       return {
         type: 'ArrayCreationExpression',
         elementType,
-        size: { type: 'Literal', value: initializer.length, raw: String(initializer.length), line: 1 },
+        size: { type: 'Literal', value: initializer.length, raw: `${initializer.length}`, line: 1 },
         initializer,
         line: this.getLine(cst.New?.[0]),
       };
