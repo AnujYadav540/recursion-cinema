@@ -11,6 +11,15 @@ export default defineConfig({
       interval: 100,
     },
   },
+  build: {
+    // Skip type checking during build - only transpile
+    target: 'esnext',
+    minify: 'esbuild',
+  },
+  esbuild: {
+    // Disable type checking in esbuild
+    logOverride: { 'this-is-undefined-in-esm': 'silent' }
+  },
   test: {
     globals: true,
     environment: 'jsdom',
