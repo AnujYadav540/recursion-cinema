@@ -1,0 +1,263 @@
+/* SectionNav Styles */
+
+.section-nav {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-nav--hidden {
+  right: 0;
+}
+
+.section-nav--visible {
+  right: 0;
+}
+
+.nav-toggle {
+  width: 24px;
+  height: 48px;
+  background: rgba(10, 10, 26, 0.9);
+  border: 1px solid #333;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  color: #888;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(33, 150, 243, 0.2);
+  color: #2196F3;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(10, 10, 26, 0.9);
+  border: 1px solid #333;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-dot-inner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.nav-dot:hover {
+  border-color: #2196F3;
+  transform: scale(1.2);
+}
+
+.nav-dot:hover .nav-dot-inner {
+  background: #2196F3;
+}
+
+.nav-dot--active {
+  border-color: #2196F3;
+}
+
+.nav-dot--active .nav-dot-inner {
+  background: #2196F3;
+  width: 8px;
+  height: 8px;
+}
+
+.nav-label {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem 1rem;
+  margin-right: 0.75rem;
+  background: rgba(10, 10, 26, 0.95);
+  border: 1px solid rgba(33, 150, 243, 0.3);
+  border-radius: 6px;
+  color: white;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.nav-dot:hover .nav-label,
+.nav-dot:focus .nav-label {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Focus styles for accessibility */
+.nav-dot:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.4);
+}
+
+.nav-dot:focus .nav-label {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive - Desktop (>1024px) */
+@media (min-width: 1025px) {
+  .section-nav {
+    right: 2rem;
+  }
+
+  .nav-dot {
+    width: 18px;
+    height: 18px;
+  }
+
+  .nav-dot-inner {
+    width: 7px;
+    height: 7px;
+  }
+
+  .nav-dot--active .nav-dot-inner {
+    width: 9px;
+    height: 9px;
+  }
+
+  .nav-label {
+    font-size: 0.9rem;
+    padding: 0.625rem 1.25rem;
+  }
+}
+
+/* Responsive - Tablet (768-1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section-nav {
+    right: 1rem;
+  }
+
+  .nav-dot {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Responsive - Mobile (<768px) */
+@media (max-width: 768px) {
+  .section-nav {
+    right: 0.5rem;
+  }
+
+  /* Ensure touch target is at least 44px */
+  .nav-item {
+    padding: 6px;
+  }
+
+  .nav-dot {
+    width: 14px;
+    height: 14px;
+    /* Touch target padding */
+    position: relative;
+  }
+
+  .nav-dot::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+  }
+
+  .nav-dot-inner {
+    width: 5px;
+    height: 5px;
+  }
+
+  .nav-dot--active .nav-dot-inner {
+    width: 7px;
+    height: 7px;
+  }
+
+  .nav-label {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .nav-list {
+    gap: 0.75rem;
+  }
+}
+
+/* Responsive - Small mobile (<480px) */
+@media (max-width: 480px) {
+  .section-nav {
+    right: 0.25rem;
+  }
+
+  .nav-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .nav-dot-inner {
+    width: 4px;
+    height: 4px;
+  }
+
+  .nav-dot--active .nav-dot-inner {
+    width: 6px;
+    height: 6px;
+  }
+
+  .nav-label {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    margin-right: 0.5rem;
+  }
+
+  .nav-list {
+    gap: 0.5rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .nav-dot,
+  .nav-dot-inner,
+  .nav-label {
+    transition: none;
+  }
+}

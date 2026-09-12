@@ -1,0 +1,209 @@
+/* PracticeSection Styles */
+
+.practice-section {
+  padding: 3rem 1rem;
+  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f23 100%);
+}
+
+.practice-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.practice-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.title-icon {
+  font-size: 1.5rem;
+}
+
+.practice-subtitle {
+  text-align: center;
+  color: #8b8b9a;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.practice-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  color: #aaa;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: #fff;
+  background: #1e1e2e;
+  border: 1px solid #444;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.filter-select:hover,
+.filter-select:focus {
+  border-color: #2196F3;
+  outline: none;
+}
+
+.filter-select option {
+  background: #1e1e2e;
+  color: #fff;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.problem-card {
+  background: #1e1e2e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.problem-card:hover {
+  border-color: #2196F3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+}
+
+.problem-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.problem-name {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.problem-difficulty {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #000;
+  border-radius: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.problem-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.problem-category {
+  color: #888;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.problem-platform {
+  color: #aaa;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.available-platforms {
+  display: flex;
+  gap: 0.35rem;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.platform-dot {
+  opacity: 0.7;
+  cursor: help;
+}
+
+.problems-count {
+  text-align: center;
+  color: #666;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .practice-section {
+    padding: 2rem 1rem;
+  }
+
+  .practice-title {
+    font-size: 1.5rem;
+  }
+
+  .practice-filters {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .filter-select {
+    min-width: 200px;
+  }
+
+  .problems-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .practice-title {
+    font-size: 1.25rem;
+  }
+
+  .problem-card {
+    padding: 0.75rem;
+  }
+
+  .problem-name {
+    font-size: 0.85rem;
+  }
+}
